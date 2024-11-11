@@ -15,7 +15,7 @@ public struct Position
 
     }
     public void PrintPosition(){
-        Debug.Log("Position(X = "+this.x + ",Y = "+this.y + ",Z= )"+this.z);
+        Debug.Log("Position(X = "+this.x + ",Y = "+this.y + ",Z= "+this.z+")");
         
 
     }
