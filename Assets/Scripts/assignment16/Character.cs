@@ -2,77 +2,75 @@
 using UnityEngine;
 namespace Assignment18
 {
-public class Character 
-{
-    public string name;
-    private int health;
-    protected Position position;
-
-    public int Health
+    public class Character
     {
-        get {return health;}
-        set{
-            if(value>=0 && value<=100){
-                health = value;
+        //fields
+        public string name;
+        private int health;
+        protected Position position;
+
+        //properity
+        public int Health
+        {
+            get { return health; }
+            set
+            {
+
+                if (health < 0) { health = 0; }
+                else if (health > 100) { health = 100; }
+                else { health = value; }
+
+
             }
         }
-    }
 
-    public Character(string name , int Health , Position position){
-        this.name = name;
-        this.Health  = Health;
-        this.position = position;
-    }
-
-    public Character():this("No Name",100,new Position(0,0,0))
-    {
-
-    }
-
-    public virtual void DisplayInfo()
-    {
-        Debug.Log("Name :" + this.name);
-        Debug.Log("Health :" + this.Health);
-        this.position.PrintPosition();
-        
-    }
-
-
-    public void CommonAttack(int damage)
-    {
-        Health -= damage;
-        if(Health<0)
+        //constructor
+        public Character(string name, int Health, Position position)
         {
-            Health = 0 ; 
+            this.name = name;
+            this.Health = Health;
+            this.position = position;
+        }
+        //chaining constructor
+        public Character() : this("No Name", 100, new Position(0, 0, 0))
+        {
+
+        }
+        //method to display information for Character object
+        public virtual void DisplayInfo()
+        {
+            Debug.Log("Name :" + this.name);
+            Debug.Log("Health :" + this.Health);
+            this.position.PrintPosition();
+
+        }
+
+        //method decrease health after attacked 
+        public void Attack(int damage, Character target)
+        {
+            target.Health -= damage;
+
+            Debug.Log(target + " attacked by " + damage + " amount");
+
+
+
+
+        }
+
+        //method overloading by adding a parameter attacked type 
+        public void Attack(int damage, Character target, string attackType)
+        {
+            target.Health -= damage;
+            Debug.Log(target + "attacked by " + damage + "amount" + "by " + attackType);
+
 
         }
 
 
 
-    }
-    public void Attack( int damage , Character target)
-    {
-        target.CommonAttack(damage);
-        Debug.Log(target + "attacked by " + damage +"amount" );
-        
 
 
 
     }
-
-    public void Attack( int damage , Character target,string attackType)
-    {
-        target.CommonAttack(damage);
-        Debug.Log(target + "attacked by " + damage +"amount" + "by "+ attackType);
-
-
-    }
-
-
-
-   
-
-
-}
 }
 

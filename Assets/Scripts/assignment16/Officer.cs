@@ -1,18 +1,20 @@
 using UnityEngine;
 namespace Assignment18
 {
-public class Officer : Character
-{
-    public Officer(string name , int Health , Position position):base( name ,  Health ,position )
+    //inhertense from character class 
+    public class Officer : Character
     {
+        //constructor called thes base constuctor and apply DRY
+        public Officer(string name, int Health, Position position) : base(name, Health, position)
+        {
 
-    }
-
-     public override void DisplayInfo()
+        }
+        //method override to display info
+        public override void DisplayInfo()
         {
             Debug.Log("Officer");
             base.DisplayInfo();
-            
+
         }
-}
+    }
 }
