@@ -6,18 +6,23 @@ namespace assignment29
     {
         void Start()
         {
-            
+            Animal animal = new Animal ();
+
+            Cat cat = new Cat();
+
 
             //UpCasting 
-            Animal animal = new Cat();
-       
-            // Cat cat =(Cat) new Animal() ;
+            animal = cat ;
+           
+            //downcasting
+            cat = animal as Cat ; 
+          
 
             animal.MakeSound();
             animal.Move();
 
-            // cat.MakeSound();
-            // cat.Move();
+            cat.MakeSound();
+            cat.Move();
 
             List<ICanFight> animalList = new List<ICanFight> { new Cat(), new Warrior() };
 
