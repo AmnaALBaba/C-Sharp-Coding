@@ -26,16 +26,16 @@ namespace assignment29
 
             List<ICanFight> animalList = new List<ICanFight> { new Cat(), new Warrior() };
 
-            foreach (var animals in animalList)
+            foreach (var animl in animalList)
             {
-                animals.Attack();
-                if (animals is Cat)
+                animl.Attack();
+                if (animl is Cat)
                 {
                     Debug.Log("The object is a Cat.");
 
 
                 }
-                if (animals is Warrior)
+                if (animl is Warrior)
                 {
                     Debug.Log("The object is a Warrior.");
 
