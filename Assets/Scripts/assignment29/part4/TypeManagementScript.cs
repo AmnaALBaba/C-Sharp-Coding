@@ -6,17 +6,17 @@ namespace assignment29
     {
         void Start()
         {
-            Animal animal = new Animal ();
+            Animal animal = new Animal();
 
             Cat cat = new Cat();
 
 
             //UpCasting 
-            animal = cat ;
-           
+            animal = cat;
+
             //downcasting
-            cat = animal as Cat ; 
-          
+            cat = animal as Cat;
+
 
             animal.MakeSound();
             animal.Move();
