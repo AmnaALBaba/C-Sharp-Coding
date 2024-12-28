@@ -55,7 +55,7 @@ namespace assignment29
             Debug.Log("Animal sound");
 
         }
-        public virtual void Move()
+        public void Move()
         {
             Debug.Log("Animal Moves");
 
@@ -75,7 +75,7 @@ namespace assignment29
             Debug.Log("Meow!");
 
         }
-        public override void Move()
+        public void Move()
         {
             Debug.Log("Cat runs quickly.");
 
