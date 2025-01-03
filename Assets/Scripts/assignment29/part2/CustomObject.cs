@@ -19,8 +19,8 @@ namespace assignment29
         }
         public CustomObject(int id, string name)
         {
-            _id = id;
-            _name = name;
+            ID = id;
+            Name = name;
         }
 
         public override string ToString()
@@ -44,7 +44,7 @@ namespace assignment29
         {
             if (!c1.Equals(null) && !c2.Equals(null))
             {
-                if (c1._id.Equals(c2._id) && c1._name.Equals(c2._name)) { return true; }
+                if (c1.ID.Equals(c2.ID) && c1.Name.Equals(c2.Name)) { return true; }
             }
             return false;
 
@@ -55,7 +55,7 @@ namespace assignment29
         {
             if (!c1.Equals(null) && !c2.Equals(null))
             {
-                if (!c1._id.Equals(c2._id) || !c1._name.Equals(c2._name)) { return true; }
+                if (!c1.ID.Equals(c2.ID) || !c1.Name.Equals(c2.Name)) { return true; }
             }
             return false;
 

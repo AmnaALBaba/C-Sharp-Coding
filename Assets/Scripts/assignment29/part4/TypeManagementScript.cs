@@ -21,8 +21,12 @@ namespace assignment29
             animal.MakeSound();
             animal.Move();
 
-            cat.MakeSound();
-            cat.Move();
+            if (cat != null)
+            {
+
+                cat.MakeSound();
+                cat.Move();
+            }
 
             List<ICanFight> animalList = new List<ICanFight> { new Cat(), new Warrior() };
 
@@ -60,6 +64,7 @@ namespace assignment29
             Debug.Log("Animal Moves");
 
         }
+
     }
 
     public class Cat : Animal, ICanFight
