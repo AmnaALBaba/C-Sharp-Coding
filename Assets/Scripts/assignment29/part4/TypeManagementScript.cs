@@ -12,7 +12,7 @@ namespace assignment29
 
 
             //UpCasting 
-            animal = cat;
+            animal = cat;  // animal ref execute all method &feild  in animal and method override in cat ; 
 
             //downcasting
             cat = animal as Cat;
@@ -80,7 +80,9 @@ namespace assignment29
             Debug.Log("Meow!");
 
         }
-        public void Move()
+
+        //hiding by new keyword ; 
+        public new  void Move()
         {
             Debug.Log("Cat runs quickly.");
 
